@@ -29,9 +29,9 @@ namespace GlobalMap
         {
             var root = SetLocationRootTransform();
             
-            var cellDescription = _description.Cell;
+            var cellDescription = _description.TerrainCell;
             
-            _cells.Add(new GlobalMapCellModel(cellDescription, Vector3.zero, root));
+            _cells.Add(new GlobalMapCellModel(_description.PlayerHomeCell, Vector3.zero, root));
 
             for (var k = 1; k < _description.RadiusFactor + 1; k++)
             {

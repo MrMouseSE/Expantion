@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: GlobalMapDescription
   m_EditorClassIdentifier: 
   _root: {fileID: 8032278644985314642, guid: d2eb9fbe188e42349bc0a2af3fa7801e, type: 3}
-  _cell: {fileID: 11400000, guid: 64be44b4818912846a57df19f69ec471, type: 2}
-  _radiusFactor: 4
+  _terrainCell: {fileID: 11400000, guid: 64be44b4818912846a57df19f69ec471, type: 2}
+  _playerHomeCell: {fileID: 11400000, guid: d2e95193fb479884f840f821d3203d7a, type: 2}
+  _radiusFactor: 3
