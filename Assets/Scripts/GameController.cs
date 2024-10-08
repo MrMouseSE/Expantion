@@ -6,9 +6,8 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    private ScenesHandler _scenesHandler;
-    
     public static ScenesDataHolder CurrentScenesDataHolder;
+    private static ScenesHandler _scenesHandler;
     private static readonly ISceneController[] SceneControllers = new ISceneController[3];
 
     public void Awake()
@@ -19,7 +18,7 @@ public class GameController : MonoBehaviour
         CreateSceneControllers();
     }
 
-    public void SwitchScene(SceneType sceneType, ScenesDataHolder scenesData)
+    public static void SwitchScene(SceneType sceneType, ScenesDataHolder scenesData)
     {
         SceneControllers[(int)sceneType].UpdateSceneData(scenesData);
         _scenesHandler.SetActiveScene(sceneType);
