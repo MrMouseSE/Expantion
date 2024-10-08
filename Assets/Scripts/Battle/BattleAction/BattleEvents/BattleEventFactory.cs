@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Fight.FightEvents
+namespace Battle.BattleAction.BattleEvents
 {
     public static class BattleEventFactory
     {

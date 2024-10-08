@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-namespace FightSceneScripts
+namespace Battle.BattleSceneScripts
 {
     public class BattleHeroButtonsHandler : MonoBehaviour
     {

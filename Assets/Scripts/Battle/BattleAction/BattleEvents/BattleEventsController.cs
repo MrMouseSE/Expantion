@@ -1,4 +1,4 @@
-namespace Fight.FightEvents
+namespace Battle.BattleAction.BattleEvents
 {
     public class BattleEventsController
     {

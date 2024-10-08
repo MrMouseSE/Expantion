@@ -1,5 +1,5 @@
+using Battle.BattleSceneScripts;
 using City;
-using FightSceneScripts;
 using GlobalMapSceneScripts;
 using ScenesManager;
 using UnityEngine;

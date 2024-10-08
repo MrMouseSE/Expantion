@@ -1,7 +1,7 @@
-using Fight.FightEvents;
+using Battle.BattleAction.BattleEvents;
 using Unit;
 
-namespace Fight
+namespace Battle.BattleAction
 {
     public class BattleHolder
     {

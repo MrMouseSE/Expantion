@@ -1,5 +1,4 @@
-using Fight.FightEvents;
-using FightSceneScripts;
+using Battle.BattleAction.BattleEvents;
 
 public class ScenesDataHolder
 {

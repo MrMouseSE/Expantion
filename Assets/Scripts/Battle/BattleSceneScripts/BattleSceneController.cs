@@ -1,9 +1,9 @@
-using Fight;
-using Fight.FightEvents;
+using Battle.BattleAction;
+using Battle.BattleAction.BattleEvents;
 using ScenesManager;
 using Unit;
 
-namespace FightSceneScripts
+namespace Battle.BattleSceneScripts
 {
     public class BattleSceneController : ISceneController
     {
