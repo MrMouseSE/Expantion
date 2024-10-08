@@ -11,11 +11,11 @@ namespace ScenesManager
             _sceneControllers.Add(sceneContainer);
         }
 
-        public void SetActiveScene(string name)
+        public void SetActiveScene(SceneType type)
         {
             foreach (var sceneController in _sceneControllers)
             {
-                sceneController.SetCurrentState(sceneController.RootObject.scene.name == name);
+                sceneController.SetCurrentState(sceneController.Type == type);
             }
         }
     }

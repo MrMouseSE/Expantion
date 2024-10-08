@@ -6,27 +6,28 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public SceneHolder SceneHolder;
-    
     private ScenesHandler _scenesHandler;
+    
+    public static ScenesDataHolder CurrentScenesDataHolder;
+    private static readonly ISceneController[] SceneControllers = new ISceneController[3];
 
-    public static ISceneController[] SceneControllers = new ISceneController[3];
-
-    public void Start()
+    public void Awake()
     {
+        CurrentScenesDataHolder = new ScenesDataHolder();
         _scenesHandler = new ScenesHandler();
-        SceneLoader.LoadScenes(SceneHolder, _scenesHandler);
+        SceneLoader.LoadScenes(_scenesHandler);
         CreateSceneControllers();
     }
 
-    public void SwitchScene(string name)
+    public void SwitchScene(SceneType sceneType, ScenesDataHolder scenesData)
     {
-        _scenesHandler.SetActiveScene(name);
+        SceneControllers[(int)sceneType].UpdateSceneData(scenesData);
+        _scenesHandler.SetActiveScene(sceneType);
     }
 
     private void CreateSceneControllers()
     {
-        SceneControllers[0] = new FightSceneController();
+        SceneControllers[0] = new BattleSceneController();
         SceneControllers[1] = new CitySceneController();
         SceneControllers[2] = new GlobalMapSceneController();
     }

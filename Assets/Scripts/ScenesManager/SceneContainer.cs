@@ -13,7 +13,7 @@ namespace ScenesManager
             RootObject.SetActive(active);
             if (active)
             {
-                GameController.SceneControllers[(int)Type].UpdateSceneData(SceneCanvas);
+                GameController.CurrentScenesDataHolder.CurrentSceneUi = SceneCanvas;
             }
         }
     }

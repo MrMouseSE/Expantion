@@ -1,6 +1,6 @@
 namespace Fight
 {
-    public class FightEvent
+    public class BattleEvent
     {
         public int Value;
         public string EventDescription;

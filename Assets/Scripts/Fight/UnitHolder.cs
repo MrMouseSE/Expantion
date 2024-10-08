@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Fight.FightEvents;
+using Unit;
 using UnityEngine;
 
 namespace Fight
@@ -7,8 +8,8 @@ namespace Fight
     public class UnitHolder
     {
         public UnitClass CurrentUnit;
-        public List<FightEvent> FightEvents = new List<FightEvent>();
-        public FightEventsController EventsController;
+        public List<BattleEvent> FightEvents = new List<BattleEvent>();
+        public BattleEventsController EventsController;
 
         public void GenerateNewFightEvent()
         {
@@ -38,10 +39,10 @@ namespace Fight
             return Mathf.RoundToInt(floatValue);
         }
         
-        public UnitHolder(UnitClass currentUnit, FightEventDescription description)
+        public UnitHolder(UnitClass currentUnit, BattleEventDescription description)
         {
             CurrentUnit = currentUnit;
-            EventsController = new FightEventsController(description);
+            EventsController = new BattleEventsController(description);
         }
     }
 }
