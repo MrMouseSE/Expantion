@@ -1,5 +1,10 @@
-public class CityBuilding
+using Unit;
+
+namespace City
 {
-    public UnitTypes Type;
-    public int Level;
+    public class CityBuilding
+    {
+        public UnitTypes Type;
+        public int Level;
+    }
 }

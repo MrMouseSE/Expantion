@@ -1,8 +1,11 @@
-public enum UnitTypes
+namespace Unit
 {
-    Tank,
-    Mage,
-    Warrior,
-    Sniper,
-    Rouge
+    public enum UnitTypes
+    {
+        Tank,
+        Mage,
+        Warrior,
+        Sniper,
+        Rouge
+    }
 }

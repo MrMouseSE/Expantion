@@ -1,7 +1,10 @@
-public class UnitDescription
+namespace Unit
 {
-    public float UnitCurrentDamage;
-    public float UnitCurrentHP;
-    public float UnitCurrentValue;
-    public float UnitCurrentValueCorrection;
+    public class UnitDescription
+    {
+        public float UnitCurrentDamage;
+        public float UnitCurrentHP;
+        public float UnitCurrentValue;
+        public float UnitCurrentValueCorrection;
+    }
 }

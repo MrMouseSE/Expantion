@@ -1,4 +1,4 @@
-namespace Fight
+namespace Fight.FightEvents
 {
     public class FightEvent
     {

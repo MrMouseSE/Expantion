@@ -1,7 +1,10 @@
 using System.Collections.Generic;
 
-public class UnitDescriptionsHolder
+namespace Unit
 {
-    public UnitTypes UnitsType;
-    public List<UnitDescriptionBlueprint> Blueprints;
+    public class UnitDescriptionsHolder
+    {
+        public UnitTypes UnitsType;
+        public List<UnitDescriptionBlueprint> Blueprints;
+    }
 }
