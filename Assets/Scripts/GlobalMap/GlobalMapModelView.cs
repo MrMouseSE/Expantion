@@ -1,5 +1,6 @@
 using System.Collections.Generic;
-using GlobalMap.Grid;
+using GlobalMap.Cells;
+using GlobalMap.Cells.Models;
 using UnityEngine;
 
 namespace GlobalMap

@@ -1,11 +1,11 @@
 using UnityEngine;
 
-namespace GlobalMap.Grid
+namespace GlobalMap.Cells.Models
 {
     public class GlobalMapCellModel
     {
         public GlobalMapCellDescription Description { get; }
-        public GlobalMapCellModelView _view { get; }
+        private GlobalMapCellModelView _view { get; }
         
         public GlobalMapCellModel(GlobalMapCellDescription description, Vector2 position, Transform root)
         {

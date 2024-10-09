@@ -1,5 +1,5 @@
 using System;
-using GlobalMap.Grid;
+using GlobalMap.Cells;
 using UnityEngine;
 
 namespace GlobalMap

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace GlobalMap.Grid
+namespace GlobalMap.Cells
 {
     public class GlobalMapCellContainer : MonoBehaviour
     {

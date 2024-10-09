@@ -1,8 +1,7 @@
-using GlobalMap.Grid;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace GlobalMap
+namespace GlobalMap.Cells
 {
     public class GlobalMapCellController : MonoBehaviour, IPointerClickHandler
     {

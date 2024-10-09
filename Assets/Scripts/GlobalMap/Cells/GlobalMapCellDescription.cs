@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace GlobalMap.Grid
+namespace GlobalMap.Cells
 {
     [CreateAssetMenu(menuName = "Descriptions/Create New Cell", fileName = "LocationCellDescription", order = 0)]
     public class GlobalMapCellDescription : ScriptableObject

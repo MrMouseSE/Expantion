@@ -1,6 +1,7 @@
+using GlobalMap.Cells.Models;
 using UnityEngine;
 
-namespace GlobalMap.Grid
+namespace GlobalMap.Cells
 {
     public class GlobalMapCellModelView
     {
