@@ -12,9 +12,9 @@ namespace GlobalMap
         private static readonly float _sqrtThree = Mathf.Sqrt(3);
         
         private readonly IList<GlobalMapCellModel> _cells = new List<GlobalMapCellModel>();
-        private readonly GlobalMapGenerationDataContainer _generationDataContainer;
+        private readonly GlobalMapSceneData _generationDataContainer;
 
-        public GlobalMapModelView(GlobalMapGenerationDataContainer generationDataContainer)
+        public GlobalMapModelView(GlobalMapSceneData generationDataContainer)
         {
             _generationDataContainer = generationDataContainer;
             
@@ -23,7 +23,7 @@ namespace GlobalMap
         
         private void GenerateCells()
         {
-            var root = _generationDataContainer.Root;
+            var root = _generationDataContainer.SceneRoot;
             
             var cellDescription = _generationDataContainer.TerrainCell;
             
