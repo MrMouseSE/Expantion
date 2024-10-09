@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 607560f512f948f3bf6fa9c40e2b3056, type: 3}
-  m_Name: Dungeon
+  m_Name: VillageRuins
   m_EditorClassIdentifier: 
   _locationType: 1
-  _container: {fileID: 5922152502572457825, guid: b412a9b974ed6af4cbe1418308558a0d, type: 3}
+  _container: {fileID: 5922152502572457825, guid: 0b3814fb4e87af0408058adf53f4a448, type: 3}
