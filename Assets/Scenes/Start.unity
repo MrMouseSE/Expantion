@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -151,11 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bffa70f5799a88d4d844cb40d941a834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneHolder:
-    Scenes:
-    - SceneName: City
-    - SceneName: Battle
-    - SceneName: GlobalMap
+  GenerationDataHolder: {fileID: 11400000, guid: 63897e571cd82684c88da31cf0ec6381, type: 2}
 --- !u!4 &1411681064
 Transform:
   m_ObjectHideFlags: 0

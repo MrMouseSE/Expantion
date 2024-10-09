@@ -18,5 +18,10 @@ namespace ScenesManager
                 sceneController.SetCurrentState(sceneController.Type == type);
             }
         }
+
+        public SceneContainer GetSceneContainerByType(SceneType type)
+        {
+            return _sceneContainers.Find(x => x.Type == type);
+        }
     }
 }

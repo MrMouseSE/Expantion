@@ -14,27 +14,27 @@ namespace GlobalMap
         
         private readonly IList<GlobalMapCellModel> _cells = new List<GlobalMapCellModel>();
         private readonly IList<GlobalMapLocation> _activeLocations = new List<GlobalMapLocation>();
-        private readonly GlobalMapContainer _container;
+        private readonly GlobalMapSceneData _data;
 
-        public GlobalMapModel(GlobalMapContainer container)
+        public GlobalMapModel(GlobalMapSceneData data)
         {
-            _container = container;
+            _data = data;
             
             GenerateCells();
-            PopulateFromPreset(container.StartLocations, container.LocationsCount);
+            PopulateFromPreset(_data.StartLocations, _data.LocationsCount);
         }
         
         private void GenerateCells()
         {
-            var root = _container.Root;
+            var root = _data.SceneRoot;
             
-            var cellDescription = _container.TerrainCell;
+            var cellDescription = _data.TerrainCell;
 
-            var homeCell = new GlobalMapCellModel(_container.TerrainCell, Vector3.zero, root);
+            var homeCell = new GlobalMapCellModel(_data.TerrainCell, Vector3.zero, root);
             _cells.Add(homeCell);
-            CreateNewTargetLocationAtTargetCell(_container.PlayerHome, homeCell);
+            CreateNewTargetLocationAtTargetCell(_data.PlayerHome, homeCell);
 
-            for (var k = 1; k < _container.RadiusFactor + 1; k++)
+            for (var k = 1; k < _data.RadiusFactor + 1; k++)
             {
                 for (var i = 0; i < 6 * k; i++)
                 {

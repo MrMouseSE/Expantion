@@ -22,6 +22,11 @@ namespace Battle.BattleSceneScripts
             GenerateEnemyUnit(scenesData.CurrentEnemyLevel);
         }
 
+        public void Init(ISceneControllerData data)
+        {
+            throw new System.NotImplementedException();
+        }
+
         private void GenerateEnemyUnit(int level)
         {
             _enemyUnit = UnitFactory.GenerateEnemy(level);

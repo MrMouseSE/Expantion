@@ -1,9 +1,11 @@
 using ScenesManager;
 
-namespace City
+namespace GlobalMap
 {
-    public class CitySceneController : ISceneController
+    public class GlobalMapSceneController : ISceneController
     {
+        private GlobalMapModel _globalMapModelView;
+
         public void UpdateSceneData(ScenesDataHolder sceneData)
         {
             throw new System.NotImplementedException();
@@ -11,7 +13,7 @@ namespace City
 
         public void Init(ISceneControllerData data)
         {
-            throw new System.NotImplementedException();
+            _globalMapModelView = new GlobalMapModel(data.GetSceneData() as GlobalMapSceneData);
         }
     }
 }
