@@ -4,18 +4,18 @@ namespace ScenesManager
 {
     public class ScenesHandler
     {
-        private List<SceneContainer> _sceneControllers = new List<SceneContainer>();
+        private List<SceneContainer> _sceneContainers = new List<SceneContainer>();
 
         public void AddSceneController(SceneContainer sceneContainer)
         {
-            _sceneControllers.Add(sceneContainer);
+            _sceneContainers.Add(sceneContainer);
         }
 
-        public void SetActiveScene(string name)
+        public void SetActiveScene(SceneType type)
         {
-            foreach (var sceneController in _sceneControllers)
+            foreach (var sceneController in _sceneContainers)
             {
-                sceneController.SetCurrentState(sceneController.RootObject.scene.name == name);
+                sceneController.SetCurrentState(sceneController.Type == type);
             }
         }
     }

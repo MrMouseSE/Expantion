@@ -5,13 +5,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-namespace FightSceneScripts
+namespace Battle.BattleSceneScripts
 {
-    public class FightHeroButtonsHandler : MonoBehaviour
+    public class BattleHeroButtonsHandler : MonoBehaviour
     {
+        public Action StartFightButtonPressed;
+        
         public RectTransform MyRectTransform;
         public HeroButtonMono ButtonPrefab;
         public Button RerollButton;
+        public Button StartBattleButton;
         
         public List<HeroButtonMono> HeroButtons = new List<HeroButtonMono>();
         
@@ -22,8 +25,16 @@ namespace FightSceneScripts
             GenerateButtons();
             RerollAllHeroes();
             RerollButton.onClick.AddListener(RerollAllHeroes);
+            StartBattleButton.onClick.AddListener(StartBattle);
         }
-        
+
+        private void StartBattle()
+        {
+            if (!_selectedButton) return;
+            StartFightButtonPressed.Invoke();
+            StartBattleButton.enabled = false;
+        }
+
         public void SelectedButton(HeroButtonMono selectedButton)
         {
             _selectedButton = selectedButton;
@@ -81,6 +92,7 @@ namespace FightSceneScripts
         private void OnDestroy()
         {
             RerollButton.onClick.RemoveAllListeners();
+            StartBattleButton.onClick.RemoveAllListeners();
         }
     }
 }

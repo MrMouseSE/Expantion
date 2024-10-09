@@ -7,5 +7,8 @@ namespace Unit
     public class UnitsProgressMap : ScriptableObject
     {
         public List<UnitDescriptionsHolder> Units;
+
+        [Space]
+        public List<EnemyUnitDescription> Enemies;
     }
 }
