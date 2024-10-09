@@ -15,5 +15,5 @@ MonoBehaviour:
   TerrainCell: {fileID: 11400000, guid: 64be44b4818912846a57df19f69ec471, type: 2}
   StartLocations: {fileID: 11400000, guid: 4ec204360c9d8a04a83c44d55d4976b4, type: 2}
   PlayerHome: {fileID: 11400000, guid: 2f6e9abf27656e242af6893df09786ac, type: 2}
-  LocationsCount: 4
+  LocationsCount: 5
   RadiusFactor: 2
