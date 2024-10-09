@@ -1,4 +1,4 @@
-namespace DefaultNamespace
+namespace City
 {
     public class CityMono
     {
