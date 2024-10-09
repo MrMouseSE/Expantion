@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25ef3c7137424fdc996db93e804b6f25, type: 3}
   m_Name: HomeCell
   m_EditorClassIdentifier: 
-  _cellContainer: {fileID: 3806956776001988158, guid: b4ece9aa6cce17344a715b4a28fe0290, type: 3}
-  _width: 2.56
+  _cellController: {fileID: 7560382662623554852, guid: b4ece9aa6cce17344a715b4a28fe0290, type: 3}
+  _width: 2.72

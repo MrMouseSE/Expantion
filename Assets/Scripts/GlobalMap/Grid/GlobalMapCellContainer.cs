@@ -8,7 +8,7 @@ namespace GlobalMap.Grid
     {
         [SerializeField] private List<GameObject> _baseVisuals;
 
-        public void RandomizeVisual(Vector2 position)
+        public void RandomizeVisual()
         {
             var i = Random.Range(0, _baseVisuals.Count);
 

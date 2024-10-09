@@ -4,9 +4,10 @@ namespace GlobalMap.Grid
 {
     public class GlobalMapCellModelView
     {
+        public Vector2 Position { get; private set; }
+        private GlobalMapCellContainer _container;
 
         private readonly GlobalMapCellModel _model;
-        private GlobalMapCellContainer _container;
         public GlobalMapCellModelView(GlobalMapCellModel model)
         {
             _model = model;
@@ -14,11 +15,13 @@ namespace GlobalMap.Grid
         
         public void SetContainer(Vector2 position, Transform root)
         {
-            var cellContainer = Object.Instantiate(_model.Description.GlobalMapCellContainer, new Vector3(position.x, position.y, 0), Quaternion.identity);
+            var globalMapCellController = Object.Instantiate(_model.Description.GlobalMapCellController, new Vector3(position.x, position.y), Quaternion.identity);
+            Position = position;
+            globalMapCellController.transform.SetParent(root);
+            globalMapCellController.Activate(this);
             
-            cellContainer.transform.SetParent(root);
-            _container = cellContainer;
-            _container.RandomizeVisual(position);
+            _container = globalMapCellController.CellContainer;
+            _container.RandomizeVisual();
         }
 
         public GlobalMapCellContainer GetContainer()
