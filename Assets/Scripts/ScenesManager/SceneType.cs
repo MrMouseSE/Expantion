@@ -5,6 +5,7 @@ namespace ScenesManager
         Start,
         Battle,
         City,
-        GlobalMap
+        GlobalMap,
+        Ui
     }
 }

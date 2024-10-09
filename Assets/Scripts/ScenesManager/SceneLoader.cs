@@ -41,9 +41,8 @@ namespace ScenesManager
                 }
             }
             
-            _handler.SetActiveScene(0);
-            
             SceneManager.sceneLoaded -= CollectControllers;
+            GameController.SwitchScene(SceneType.Ui);
         }
     }
 }
