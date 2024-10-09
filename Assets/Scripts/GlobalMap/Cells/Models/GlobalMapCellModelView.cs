@@ -6,9 +6,10 @@ namespace GlobalMap.Cells
     public class GlobalMapCellModelView
     {
         public Vector2 Position { get; private set; }
+        
         private GlobalMapCellContainer _container;
-
         private readonly GlobalMapCellModel _model;
+        
         public GlobalMapCellModelView(GlobalMapCellModel model)
         {
             _model = model;
@@ -25,9 +26,6 @@ namespace GlobalMap.Cells
             _container.RandomizeVisual();
         }
 
-        public GlobalMapCellContainer GetContainer()
-        {
-            return _container;
-        }
+        public GlobalMapCellContainer GetContainer() => _container;
     }
 }

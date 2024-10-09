@@ -14,10 +14,7 @@ namespace GlobalMap.Locations
             _description = description;
         }
 
-        public GlobalMapLocationDescription GetDescription()
-        {
-            return _description;
-        }
+        public GlobalMapLocationDescription GetDescription() => _description;
         
         public void CreateView(GlobalMapCellModel cell)
         {

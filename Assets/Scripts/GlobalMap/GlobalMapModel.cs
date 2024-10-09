@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using GlobalMap.Cells.Models;
 using GlobalMap.Locations;
@@ -12,8 +13,8 @@ namespace GlobalMap
 
         private static readonly float _sqrtThree = Mathf.Sqrt(3);
         
-        private readonly IList<GlobalMapCellModel> _cells = new List<GlobalMapCellModel>();
-        private readonly IList<GlobalMapLocation> _activeLocations = new List<GlobalMapLocation>();
+        private readonly Collection<GlobalMapCellModel> _cells = new ();
+        private readonly Collection<GlobalMapLocation> _activeLocations = new ();
         private readonly GlobalMapSceneData _data;
 
         public GlobalMapModel(GlobalMapSceneData data)
