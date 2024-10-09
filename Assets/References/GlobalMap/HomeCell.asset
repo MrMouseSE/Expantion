@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: HomeCell
   m_EditorClassIdentifier: 
   _cellController: {fileID: 7560382662623554852, guid: b4ece9aa6cce17344a715b4a28fe0290, type: 3}
-  _width: 2.72
+  _width: 2.93

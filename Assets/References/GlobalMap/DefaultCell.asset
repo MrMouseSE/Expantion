@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: DefaultCell
   m_EditorClassIdentifier: 
   _cellController: {fileID: -3705370127770730275, guid: 4009ff6e69e6a5e44a03019bf55063ae, type: 3}
-  _width: 2.72
+  _width: 2.93
