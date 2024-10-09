@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GenerationDataHolder: {fileID: 11400000, guid: 63897e571cd82684c88da31cf0ec6381, type: 2}
+  UnitsMap: {fileID: 11400000, guid: 21e2e1e2f90ae5f4b805fd5babe88b41, type: 2}
 --- !u!4 &1411681064
 Transform:
   m_ObjectHideFlags: 0

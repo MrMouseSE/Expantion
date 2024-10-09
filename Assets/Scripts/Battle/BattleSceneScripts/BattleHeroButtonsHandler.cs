@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using Unit;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,16 +10,23 @@ namespace Battle.BattleSceneScripts
 {
     public class BattleHeroButtonsHandler : MonoBehaviour
     {
-        public Action StartFightButtonPressed;
+        public Action<UnitClass> StartFightButtonPressed;
         
         public RectTransform MyRectTransform;
         public HeroButtonMono ButtonPrefab;
         public Button RerollButton;
         public Button StartBattleButton;
+
+        public TMP_Text HeroTitle;
+        public Image HeroPortrait;
+
+        public TMP_Text EnemyTitle;
+        public Image EnemyPortrait;
         
         public List<HeroButtonMono> HeroButtons = new List<HeroButtonMono>();
         
         private HeroButtonMono _selectedButton;
+        private UnitClass _selectedUnit;
 
         public void Start()
         {
@@ -30,14 +38,18 @@ namespace Battle.BattleSceneScripts
 
         private void StartBattle()
         {
-            if (!_selectedButton) return;
-            StartFightButtonPressed.Invoke();
+            if (_selectedUnit == null) return;
+            StartFightButtonPressed.Invoke(_selectedUnit);
             StartBattleButton.enabled = false;
         }
 
         public void SelectedButton(HeroButtonMono selectedButton)
         {
+            if (selectedButton == _selectedButton) return;
             _selectedButton = selectedButton;
+            _selectedUnit =  UnitFactory.GenerateUnit(_selectedButton.CurrentHeroType);
+            HeroTitle.text = _selectedUnit.Description.UnitName;
+            HeroPortrait.sprite = _selectedUnit.Description.UnitSprite;
             ResetSelectedButton();
         }
 
@@ -78,6 +90,7 @@ namespace Battle.BattleSceneScripts
         private void UnselectButtons()
         {
             _selectedButton = null;
+            _selectedUnit = null;
             ResetSelectedButton();
         }
 

@@ -1,27 +1,33 @@
 using System;
-using UnityEngine.UI;
+using ScenesManager;
 
 namespace UIScene
 {
     public class UiSceneUiController : AbstractUiController
     {
-        public Action StartBattleAction;
+        public Action<SceneType> StartBattleAction;
         
-        public Button StartBattleButton;
+        public UiSceneButtonContainer[] UiButtons;
 
         private void Start()
         {
-            StartBattleButton.onClick.AddListener(StartBattle);
+            foreach (var butt in UiButtons)
+            {
+                butt.ButtonPressedAction += LoadScene;
+            }
         }
 
-        private void StartBattle()
+        private void LoadScene(SceneType type)
         {
-            StartBattleAction.Invoke();
+            StartBattleAction.Invoke(type);
         }
 
         private void OnDestroy()
         {
-            StartBattleButton.onClick.RemoveAllListeners();
+            foreach (var butt in UiButtons)
+            {
+                butt.ButtonPressedAction -= LoadScene;
+            }
         }
     }
 }

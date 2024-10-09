@@ -18,10 +18,10 @@ namespace Unit
 
         public static UnitClass GenerateEnemy(int enemyLevel)
         {
-            var enemyes = Map.Enemies.FindAll(x => x.Blueprint.UnitLevel == enemyLevel);
+            var enemyes = Map.Enemies.FindAll(x => x.UnitLevel == enemyLevel);
             var enemy = new UnitClass(0);
             enemy.Description = new UnitDescription();
-            enemy.Description = SetupUnitValues(enemy.Description, enemyes[Random.Range(0, enemyes.Count)].Blueprint);
+            enemy.Description = SetupUnitValues(enemy.Description, enemyes[Random.Range(0, enemyes.Count)]);
             return enemy;
         }
 
@@ -51,6 +51,8 @@ namespace Unit
 
         private static UnitDescription SetupUnitValues(UnitDescription unit, UnitDescriptionBlueprint bp)
         {
+            unit.UnitName = bp.UnitName;
+            unit.UnitSprite = bp.UniteSprite;
             unit.UnitCurrentDamage += bp.UnitAddDamage;
             unit.UnitCurrentHP += bp.UnitAddHP;
             unit.UnitCurrentValue += bp.UnitAddValue;

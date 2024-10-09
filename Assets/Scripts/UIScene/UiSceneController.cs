@@ -10,7 +10,7 @@ namespace UIScene
             if (!SceneUiController)
             {
                 SceneUiController = sceneData.CurrentSceneUi as UiSceneUiController;
-                SceneUiController.StartBattleAction += StartBattleFromMainMenu;
+                SceneUiController.StartBattleAction += StartSceneFromMainMenu;
             }
         }
 
@@ -19,15 +19,14 @@ namespace UIScene
             throw new System.NotImplementedException();
         }
 
-        private void StartBattleFromMainMenu()
+        private void StartSceneFromMainMenu(SceneType type)
         {
-            GameController.CurrentScenesDataHolder.CurrentEnemyLevel = 1;
-            GameController.SwitchScene(SceneType.GlobalMap);
+            GameController.SwitchScene(type);
         }
 
         private void Destroy()
         {
-            SceneUiController.StartBattleAction -= StartBattleFromMainMenu;
+            SceneUiController.StartBattleAction -= StartSceneFromMainMenu;
         }
     }
 }
