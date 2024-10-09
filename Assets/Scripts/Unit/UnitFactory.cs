@@ -1,4 +1,6 @@
+using System.Linq;
 using City;
+using UnityEngine;
 
 namespace Unit
 {
@@ -14,6 +16,15 @@ namespace Unit
             return unit;
         }
 
+        public static UnitClass GenerateEnemy(int enemyLevel)
+        {
+            var enemyes = Map.Enemies.FindAll(x => x.Blueprint.UnitLevel == enemyLevel);
+            var enemy = new UnitClass(0);
+            enemy.Description = new UnitDescription();
+            enemy.Description = SetupUnitValues(enemy.Description, enemyes[Random.Range(0, enemyes.Count)].Blueprint);
+            return enemy;
+        }
+
         private static UnitDescription GenerateUnitDescription(UnitClass unit)
         {
             var bps = FindTypeFromMap(unit.UnitType, unit.UnitLevel);
@@ -23,7 +34,7 @@ namespace Unit
         private static UnitDescriptionBlueprint[] FindTypeFromMap(UnitTypes type, int level)
         {
             var bph = Map.Units.Find(x => x.UnitsType == type);
-            UnitDescriptionBlueprint[] bps = new UnitDescriptionBlueprint [level];
+            UnitDescriptionBlueprint[] bps = new UnitDescriptionBlueprint[level];
             for (int i = 0; i < level; i++)
             {
                 bps[i] = bph.Blueprints[i];
@@ -35,14 +46,15 @@ namespace Unit
         private static UnitDescription SetupUnitValues(UnitDescriptionBlueprint[] bps)
         {
             UnitDescription unit = new UnitDescription();
-            foreach (var bp in bps)
-            {
-                unit.UnitCurrentDamage += bp.UnitAddDamage;
-                unit.UnitCurrentHP += bp.UnitAddHP;
-                unit.UnitCurrentValue += bp.UnitAddValue;
-                unit.UnitCurrentValueCorrection += bp.UnitAddValueCorrection;
-            }
+            return bps.Aggregate(unit, SetupUnitValues);
+        }
 
+        private static UnitDescription SetupUnitValues(UnitDescription unit, UnitDescriptionBlueprint bp)
+        {
+            unit.UnitCurrentDamage += bp.UnitAddDamage;
+            unit.UnitCurrentHP += bp.UnitAddHP;
+            unit.UnitCurrentValue += bp.UnitAddValue;
+            unit.UnitCurrentValueCorrection += bp.UnitAddValueCorrection;
             return unit;
         }
     }

@@ -2,16 +2,19 @@ using System;
 using System.Collections.Generic;
 using Random = UnityEngine.Random;
 
-public class UnitRandomizer
+namespace Unit
 {
-    public UnitTypes GetRandomUnitType(List<UnitTypes> currentTypes)
+    public class UnitRandomizer
     {
-        UnitTypes newType = (UnitTypes)0;
-        while (!currentTypes.Contains(newType))
+        public UnitTypes GetRandomUnitType(List<UnitTypes> currentTypes)
         {
-            newType = (UnitTypes)Random.Range(0, Enum.GetValues(typeof(UnitTypes)).Length);
-        }
+            UnitTypes newType = (UnitTypes)0;
+            while (!currentTypes.Contains(newType))
+            {
+                newType = (UnitTypes)Random.Range(0, Enum.GetValues(typeof(UnitTypes)).Length);
+            }
 
-        return newType;
+            return newType;
+        }
     }
 }

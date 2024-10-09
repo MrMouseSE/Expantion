@@ -1,14 +1,21 @@
 using System.Collections.Generic;
-using Fight.FightEvents;
+using Battle.BattleAction.BattleEvents;
+using Unit;
 using UnityEngine;
 
-namespace Fight
+namespace Battle.BattleAction
 {
     public class UnitHolder
     {
         public UnitClass CurrentUnit;
-        public List<FightEvent> FightEvents = new List<FightEvent>();
-        public FightEventsController EventsController;
+        public List<BattleEvent> FightEvents = new List<BattleEvent>();
+        public BattleEventsController EventsController;
+        
+        public UnitHolder(UnitClass currentUnit, BattleEventDescription description)
+        {
+            CurrentUnit = currentUnit;
+            EventsController = new BattleEventsController(description);
+        }
 
         public void GenerateNewFightEvent()
         {
@@ -36,12 +43,6 @@ namespace Fight
         {
             var floatValue = Mathf.Lerp(value, GameConstants.PerfectValue, CurrentUnit.Description.UnitCurrentValueCorrection);
             return Mathf.RoundToInt(floatValue);
-        }
-        
-        public UnitHolder(UnitClass currentUnit, FightEventDescription description)
-        {
-            CurrentUnit = currentUnit;
-            EventsController = new FightEventsController(description);
         }
     }
 }

@@ -4,7 +4,7 @@ namespace City
 {
     public class CitySceneController : ISceneController
     {
-        public void UpdateSceneData(AbstractUiController uiController)
+        public void UpdateSceneData(ScenesDataHolder sceneData)
         {
             throw new System.NotImplementedException();
         }

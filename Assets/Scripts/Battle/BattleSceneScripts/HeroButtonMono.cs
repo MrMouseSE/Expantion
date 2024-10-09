@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace FightSceneScripts
+namespace Battle.BattleSceneScripts
 {
     public class HeroButtonMono : MonoBehaviour
     {
@@ -18,9 +18,9 @@ namespace FightSceneScripts
         [HideInInspector]
         public UnitTypes CurrentHeroType;
 
-        private FightHeroButtonsHandler _heroButtonsHolder;
+        private BattleHeroButtonsHandler _heroButtonsHolder;
 
-        public void Init(FightHeroButtonsHandler heroButtonsHolder)
+        public void Init(BattleHeroButtonsHandler heroButtonsHolder)
         {
             HeroButton.onClick.AddListener(ButtPressed);
             _heroButtonsHolder = heroButtonsHolder;

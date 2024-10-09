@@ -1,11 +1,14 @@
-public class UnitClass
+namespace Unit
 {
-    public UnitTypes UnitType;
-    public int UnitLevel;
-    public UnitDescription Description;
-
-    public UnitClass(UnitTypes type)
+    public class UnitClass
     {
-        UnitType = type;
+        public UnitTypes UnitType;
+        public int UnitLevel;
+        public UnitDescription Description;
+
+        public UnitClass(UnitTypes type)
+        {
+            UnitType = type;
+        }
     }
 }

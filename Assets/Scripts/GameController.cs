@@ -1,33 +1,36 @@
+using System;
+using Battle.BattleSceneScripts;
 using City;
-using FightSceneScripts;
 using GlobalMapSceneScripts;
 using ScenesManager;
+using UIScene;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public SceneHolder SceneHolder;
-    
-    private ScenesHandler _scenesHandler;
+    public static ScenesDataHolder CurrentScenesDataHolder;
+    private static ScenesHandler _scenesHandler;
+    private static readonly ISceneController[] SceneControllers = new ISceneController[Enum.GetValues(typeof(SceneType)).Length];
 
-    public static ISceneController[] SceneControllers = new ISceneController[3];
-
-    public void Start()
+    public void Awake()
     {
+        CurrentScenesDataHolder = new ScenesDataHolder();
         _scenesHandler = new ScenesHandler();
-        SceneLoader.LoadScenes(SceneHolder, _scenesHandler);
+        SceneLoader.LoadScenes(_scenesHandler);
         CreateSceneControllers();
     }
 
-    public void SwitchScene(string name)
+    public static void SwitchScene(SceneType sceneType)
     {
-        _scenesHandler.SetActiveScene(name);
+        _scenesHandler.SetActiveScene(sceneType);
+        SceneControllers[(int)sceneType-1].UpdateSceneData(CurrentScenesDataHolder);
     }
 
     private void CreateSceneControllers()
     {
-        SceneControllers[0] = new FightSceneController();
+        SceneControllers[0] = new BattleSceneController();
         SceneControllers[1] = new CitySceneController();
         SceneControllers[2] = new GlobalMapSceneController();
+        SceneControllers[3] = new UiSceneController();
     }
 }

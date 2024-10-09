@@ -2,10 +2,10 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Fight.FightEvents
+namespace Battle.BattleAction.BattleEvents
 {
     [CreateAssetMenu(menuName = "Create FightEventDescription", fileName = "FightEventDescription", order = 0)]
-    public class FightEventDescription : ScriptableObject
+    public class BattleEventDescription : ScriptableObject
     {
         public EventValuesHolder[] Events;
 

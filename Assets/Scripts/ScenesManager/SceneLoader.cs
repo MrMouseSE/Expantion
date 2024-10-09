@@ -1,3 +1,4 @@
+using System;
 using UnityEngine.SceneManagement;
 
 namespace ScenesManager
@@ -13,13 +14,13 @@ namespace ScenesManager
             SceneManager.sceneLoaded += CollectControllers;
         }
         
-        public static void LoadScenes(SceneHolder sceneHolder, ScenesHandler handler)
+        public static void LoadScenes(ScenesHandler handler)
         {
             _handler = handler;
-            for (var index = 0; index < sceneHolder.Scenes.Length; index++)
+            int count = Enum.GetValues(typeof(SceneType)).Length;
+            for (var index = 1; index < count; index++)
             {
-                var scene = sceneHolder.Scenes[index];
-                LoadScene(scene.SceneName,  index == sceneHolder.Scenes.Length-1);
+                LoadScene(Enum.GetName(typeof(SceneType), index),  index == count-1);
             }
         }
 
@@ -40,9 +41,8 @@ namespace ScenesManager
                 }
             }
             
-            _handler.SetActiveScene(GameConstants.DefaultSceneName);
-            
             SceneManager.sceneLoaded -= CollectControllers;
+            GameController.SwitchScene(SceneType.Ui);
         }
     }
 }
