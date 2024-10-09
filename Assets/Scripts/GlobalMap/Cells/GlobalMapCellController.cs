@@ -19,7 +19,7 @@ namespace GlobalMap.Cells
         {
             Debug.Log($"Click on cell {_model.Location?.GetDescription().LocationType}");
             
-            if(_model.Location != null)
+            if(_model.Occupied)
                 SwitchScene(_model.Location.GetDescription().LocationType);
         }
 

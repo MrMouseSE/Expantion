@@ -51,7 +51,7 @@ namespace GlobalMap
         
         private bool GetEmptyCell(out GlobalMapCellModel cellModel)
         {
-            var freeCells = _cells.Where(cell => cell.Location == null).ToList();
+            var freeCells = _cells.Where(cell => !cell.Occupied).ToList();
 
             return GetEmptyCellOutOfFreeCells(out cellModel, freeCells);
         }
@@ -95,7 +95,7 @@ namespace GlobalMap
         
         private void CreateNewTargetLocationAtTargetCell(GlobalMapLocationDescription locationDescription, GlobalMapCellModel cell)
         {
-            if (cell.Location != null) return;
+            if (cell.Occupied) return;
 
             var locationModel = new GlobalMapLocation(locationDescription);
             

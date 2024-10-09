@@ -8,6 +8,7 @@ namespace GlobalMap.Cells.Models
         public GlobalMapCellDescription Description { get; }
         public IGlobalMapLocation Location { get; set; }
         public GlobalMapCellModelView View { get; }
+        public bool Occupied => Location != null;
         
         public GlobalMapCellModel(GlobalMapCellDescription description, Vector2 position, Transform root)
         {
