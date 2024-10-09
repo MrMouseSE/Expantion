@@ -19,7 +19,7 @@ namespace GlobalMap.Cells
             var globalMapCellController = Object.Instantiate(_model.Description.GlobalMapCellController, new Vector3(position.x, position.y), Quaternion.identity);
             Position = position;
             globalMapCellController.transform.SetParent(root);
-            globalMapCellController.Activate(this);
+            globalMapCellController.Activate(_model);
             
             _container = globalMapCellController.CellContainer;
             _container.RandomizeVisual();

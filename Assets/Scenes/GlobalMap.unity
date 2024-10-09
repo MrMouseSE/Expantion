@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -365,8 +364,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _root: {fileID: 1507486655}
   _terrainCell: {fileID: 11400000, guid: 64be44b4818912846a57df19f69ec471, type: 2}
-  _playerHomeCell: {fileID: 11400000, guid: d2e95193fb479884f840f821d3203d7a, type: 2}
+  _playerHome: {fileID: 11400000, guid: 2f6e9abf27656e242af6893df09786ac, type: 2}
+  _startLocations: {fileID: 11400000, guid: 4ec204360c9d8a04a83c44d55d4976b4, type: 2}
   _radiusFactor: 2
+  _locationsCount: 4
 --- !u!1 &1436469120
 GameObject:
   m_ObjectHideFlags: 0
