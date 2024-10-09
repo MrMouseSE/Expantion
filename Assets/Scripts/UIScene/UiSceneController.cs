@@ -14,6 +14,11 @@ namespace UIScene
             }
         }
 
+        public void Init(ISceneControllerData data)
+        {
+            throw new System.NotImplementedException();
+        }
+
         private void StartBattleFromMainMenu()
         {
             GameController.CurrentScenesDataHolder.CurrentEnemyLevel = 1;

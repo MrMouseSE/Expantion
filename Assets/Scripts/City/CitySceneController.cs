@@ -8,5 +8,10 @@ namespace City
         {
             throw new System.NotImplementedException();
         }
+
+        public void Init(ISceneControllerData data)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

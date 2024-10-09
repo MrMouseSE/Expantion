@@ -5,6 +5,7 @@ namespace ScenesManager
 {
     public static class SceneLoader
     {
+        public static Action ScenesLoaded;
         private static ScenesHandler _handler;
         
         private static void LoadScene(string scene, bool subscribeCollect)
@@ -42,7 +43,7 @@ namespace ScenesManager
             }
             
             SceneManager.sceneLoaded -= CollectControllers;
-            GameController.SwitchScene(SceneType.Ui);
+            ScenesLoaded.Invoke();
         }
     }
 }

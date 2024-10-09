@@ -12,24 +12,24 @@ namespace GlobalMap
         private static readonly float _sqrtThree = Mathf.Sqrt(3);
         
         private readonly IList<GlobalMapCellModel> _cells = new List<GlobalMapCellModel>();
-        private readonly GlobalMapContainer _container;
+        private readonly GlobalMapGenerationDataContainer _generationDataContainer;
 
-        public GlobalMapModelView(GlobalMapContainer container)
+        public GlobalMapModelView(GlobalMapGenerationDataContainer generationDataContainer)
         {
-            _container = container;
+            _generationDataContainer = generationDataContainer;
             
             GenerateCells();
         }
         
         private void GenerateCells()
         {
-            var root = _container.Root;
+            var root = _generationDataContainer.Root;
             
-            var cellDescription = _container.TerrainCell;
+            var cellDescription = _generationDataContainer.TerrainCell;
             
-            _cells.Add(new GlobalMapCellModel(_container.PlayerHomeCell, Vector3.zero, root));
+            _cells.Add(new GlobalMapCellModel(_generationDataContainer.PlayerHomeCell, Vector3.zero, root));
 
-            for (var k = 1; k < _container.RadiusFactor + 1; k++)
+            for (var k = 1; k < _generationDataContainer.RadiusFactor + 1; k++)
             {
                 for (var i = 0; i < 6 * k; i++)
                 {
