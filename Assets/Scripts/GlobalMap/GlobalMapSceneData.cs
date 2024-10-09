@@ -1,4 +1,5 @@
 using GlobalMap.Cells;
+using GlobalMap.Locations;
 using ScenesManager;
 using UnityEngine;
 
@@ -8,7 +9,9 @@ namespace GlobalMap
     {
         public Transform SceneRoot;
         public GlobalMapCellDescription TerrainCell;
-        public GlobalMapCellDescription PlayerHomeCell;
+        public GlobalMapLocationsPresetDescription StartLocations;
+        public GlobalMapLocationDescription PlayerHome;
+        public int LocationsCount;
         public int RadiusFactor;
         
         public ISceneControllerData GetSceneData()

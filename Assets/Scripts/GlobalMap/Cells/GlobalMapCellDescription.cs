@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace GlobalMap.Cells
 {
-    [CreateAssetMenu(menuName = "Descriptions/Create New Cell", fileName = "LocationCellDescription", order = 0)]
+    [CreateAssetMenu(menuName = "Descriptions/Create New Cell", fileName = "GlobalMapCellDescription", order = 0)]
     public class GlobalMapCellDescription : ScriptableObject
     { 
         [SerializeField] private GlobalMapCellController _cellController;

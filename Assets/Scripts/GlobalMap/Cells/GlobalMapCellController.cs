@@ -1,3 +1,4 @@
+using GlobalMap.Cells.Models;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -9,16 +10,16 @@ namespace GlobalMap.Cells
 
         public GlobalMapCellContainer CellContainer => _container;
         
-        private GlobalMapCellModelView _modelView;
+        private GlobalMapCellModel _model;
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            Debug.Log($"Click on cell {_modelView.Position}");
+            Debug.Log($"Click on cell {_model.Location?.GetDescription().LocationType}");
         }
 
-        public void Activate(GlobalMapCellModelView model)
+        public void Activate(GlobalMapCellModel model)
         {
-            _modelView = model;
+            _model = model;
         }
     }
 }

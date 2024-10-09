@@ -1,3 +1,4 @@
+using GlobalMap.Locations;
 using UnityEngine;
 
 namespace GlobalMap.Cells.Models
@@ -5,14 +6,15 @@ namespace GlobalMap.Cells.Models
     public class GlobalMapCellModel
     {
         public GlobalMapCellDescription Description { get; }
-        private GlobalMapCellModelView _view { get; }
+        public IGlobalMapLocation Location { get; set; }
+        public GlobalMapCellModelView View { get; }
         
         public GlobalMapCellModel(GlobalMapCellDescription description, Vector2 position, Transform root)
         {
             Description = description;
-            _view = new GlobalMapCellModelView(this);
+            View = new GlobalMapCellModelView(this);
 
-            _view.SetContainer(position, root);
+            View.SetContainer(position, root);
         }
     }
 }

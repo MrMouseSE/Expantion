@@ -4,6 +4,8 @@ namespace GlobalMap
 {
     public class GlobalMapSceneController : ISceneController
     {
+        private GlobalMapModel _globalMapModelView;
+
         public void UpdateSceneData(ScenesDataHolder sceneData)
         {
             throw new System.NotImplementedException();
@@ -11,7 +13,7 @@ namespace GlobalMap
 
         public void Init(ISceneControllerData data)
         {
-            var globalMapModelView = new GlobalMapModelView(data.GetSceneData() as GlobalMapSceneData);
+            _globalMapModelView = new GlobalMapModel(data.GetSceneData() as GlobalMapSceneData);
         }
     }
 }
