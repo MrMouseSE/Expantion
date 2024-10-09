@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GlobalMap.unity
     guid: 580b3a9422e8c2f408c748e612569906
+  - enabled: 1
+    path: Assets/Scenes/Ui.unity
+    guid: 1658db75122c25e46ba5507634024b68
   m_configObjects: {}

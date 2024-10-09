@@ -17,7 +17,7 @@ namespace UIScene
         private void StartBattleFromMainMenu()
         {
             GameController.CurrentScenesDataHolder.CurrentEnemyLevel = 1;
-            GameController.SwitchScene(SceneType.Battle);
+            GameController.SwitchScene(SceneType.GlobalMap);
         }
 
         private void Destroy()
