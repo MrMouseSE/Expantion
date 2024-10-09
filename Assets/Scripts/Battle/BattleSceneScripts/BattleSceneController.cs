@@ -30,12 +30,14 @@ namespace Battle.BattleSceneScripts
         private void GenerateEnemyUnit(int level)
         {
             _enemyUnit = UnitFactory.GenerateEnemy(level);
+            BattleHeroButtonsHandler.EnemyTitle.text = _enemyUnit.Description.UnitName;
+            BattleHeroButtonsHandler.EnemyPortrait.sprite = _enemyUnit.Description.UnitSprite;
+
         }
 
-        private void StartFight()
+        private void StartFight(UnitClass playerUnit)
         {
             BattleHolder = new BattleHolder();
-            var playerUnit = UnitFactory.GenerateUnit(BattleHeroButtonsHandler.GetSelectedType());
             BattleHolder.FillUnitsHolders(playerUnit, _playerEvents, _enemyUnit, _enemyEvents);
         }
 

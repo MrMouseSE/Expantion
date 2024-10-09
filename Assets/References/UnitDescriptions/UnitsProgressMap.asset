@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50422887325647088dff20052519c6dd, type: 3}
+  m_Name: UnitsProgressMap
+  m_EditorClassIdentifier: 
+  Units:
+  - UnitsType: 0
+    Blueprints:
+    - {fileID: 11400000, guid: e67f4bfc6f63a804fa3d52d8874dc965, type: 2}
+    - {fileID: 11400000, guid: 594e396f5836ea34fa184dd64a678c19, type: 2}
+  Enemies:
+  - {fileID: 11400000, guid: 4ef134eec4af1774784ce0dcb21b0ca7, type: 2}

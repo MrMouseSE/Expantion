@@ -4,11 +4,14 @@ using City;
 using GlobalMap;
 using ScenesManager;
 using UIScene;
+using Unit;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
     public GlobalMapGenerationDataHolder GenerationDataHolder;
+    public UnitsProgressMap UnitsMap;
+    
     public static ScenesDataHolder CurrentScenesDataHolder;
     private static ScenesHandler _scenesHandler;
     private static readonly ISceneController[] SceneControllers = 
@@ -16,6 +19,8 @@ public class GameController : MonoBehaviour
 
     public void Awake()
     {
+        UnitFactory.Map = UnitsMap;
+        
         CurrentScenesDataHolder = new ScenesDataHolder();
         _scenesHandler = new ScenesHandler();
         SceneLoader.LoadScenes(_scenesHandler);

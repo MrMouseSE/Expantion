@@ -9,6 +9,6 @@ namespace Unit
         public List<UnitDescriptionsHolder> Units;
 
         [Space]
-        public List<EnemyUnitDescription> Enemies;
+        public List<UnitDescriptionBlueprint> Enemies;
     }
 }
