@@ -8,12 +8,9 @@ namespace GlobalMap.Locations
     {
         [SerializeField] private GlobalMapLocationType _locationType;
         [Space]
-        [SerializeField] private GlobalMapLocationContainer _container;
-        [Space]
         [SerializeField] private List<Sprite> _spriteVariants;
         
         public GlobalMapLocationType LocationType => _locationType;
-        public GlobalMapLocationContainer Container => _container;
         public List<Sprite> SpriteVariants => _spriteVariants;
     }
 }

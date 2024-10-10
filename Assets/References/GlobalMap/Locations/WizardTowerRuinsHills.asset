@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607560f512f948f3bf6fa9c40e2b3056, type: 3}
+  m_Name: WizardTowerRuinsHills
+  m_EditorClassIdentifier: 
+  _locationType: 1
+  _spriteVariants:
+  - {fileID: 21300000, guid: 6146f151913f4974a83464b93b23a91a, type: 3}
+  - {fileID: 21300000, guid: 774242b05602c37409822c0f57709610, type: 3}
+  - {fileID: 21300000, guid: 31853705249e2bb41be1ece54b684490, type: 3}
+  - {fileID: 21300000, guid: 97f3a95196c14a045b40f567c5bc4534, type: 3}

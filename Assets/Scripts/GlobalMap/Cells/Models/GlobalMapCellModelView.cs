@@ -1,16 +1,19 @@
+using GlobalMap.Presets;
 using UnityEngine;
 
 namespace GlobalMap.Cells.Models
 {
     public class GlobalMapCellModelView
     {
-        
+        private Sprite _defaultSprite;
         private GlobalMapCellContainer _container;
         private readonly GlobalMapCellModel _model;
-        
-        public GlobalMapCellModelView(GlobalMapCellModel model)
+        private readonly GlobalMapPresetData _presetData;
+
+        public GlobalMapCellModelView(GlobalMapCellModel model, GlobalMapPresetData presetData)
         {
             _model = model;
+            _presetData = presetData;
         }
         
         public void SetContainer(Vector2 position, Transform root)
@@ -19,10 +22,14 @@ namespace GlobalMap.Cells.Models
             globalMapCellController.transform.SetParent(root);
             globalMapCellController.Activate(_model);
             
+            _defaultSprite = _presetData.EnvironmentsPreset.SpriteVariants[Random.Range(0, _presetData.EnvironmentsPreset.SpriteVariants.Count)];
+            
             _container = globalMapCellController.CellContainer;
-            _container.RandomizeVisual();
+            _container.SetSprite(_defaultSprite);
         }
 
         public GlobalMapCellContainer GetContainer() => _container;
+        public void UpdateView(Sprite sprite) => _container.SetSprite(sprite);
+        public void ResetViewToDefault() => _container.SetSprite(_defaultSprite);
     }
 }

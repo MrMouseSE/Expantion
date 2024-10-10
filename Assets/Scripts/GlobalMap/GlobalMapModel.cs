@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using GlobalMap.Cells.Models;
 using GlobalMap.Locations;
+using GlobalMap.Presets;
 using UnityEngine;
 
 namespace GlobalMap
@@ -16,24 +17,31 @@ namespace GlobalMap
         private readonly Collection<GlobalMapCellModel> _cells = new ();
         private readonly Collection<GlobalMapLocation> _activeLocations = new ();
         private readonly GlobalMapSceneData _data;
+        private readonly GlobalMapPresetData _currentPreset;
 
         public GlobalMapModel(GlobalMapSceneData data)
         {
             _data = data;
+            _currentPreset = GetNewRandomGlobalMapPreset();
             
             GenerateCells();
-            PopulateFromPreset(_data.StartLocations, _data.LocationsCount);
+            PopulateFromPreset(_currentPreset.LocationsPreset, _data.LocationsCount);
         }
-        
+
+        private GlobalMapPresetData GetNewRandomGlobalMapPreset()
+        {
+            return _data.GlobalMapPresetData.GlobalMapPresets[Random.Range(0, _data.GlobalMapPresetData.GlobalMapPresets.Count)];        
+        }
+
         private void GenerateCells()
         {
             var root = _data.SceneRoot;
             
-            var cellDescription = _data.TerrainCell;
+            var cellDescription = _data.GlobalMapCell;
 
-            var homeCell = new GlobalMapCellModel(_data.TerrainCell, Vector3.zero, root);
+            var homeCell = new GlobalMapCellModel(cellDescription, Vector3.zero, root, _currentPreset);
             _cells.Add(homeCell);
-            CreateNewTargetLocationAtTargetCell(_data.PlayerHome, homeCell);
+            CreateNewTargetLocationAtTargetCell(_currentPreset.LocationsPreset.HomeLocation, homeCell);
 
             for (var k = 1; k < _data.RadiusFactor + 1; k++)
             {
@@ -45,7 +53,7 @@ namespace GlobalMap
                     var divisionAngle = recalculateAngleForStep + 2 * _angle;
                     position += i % k * _sqrtThree * cellDescription.Width / 2 * new Vector2(Mathf.Cos(divisionAngle), Mathf.Sin(divisionAngle));
                 
-                    _cells.Add(new GlobalMapCellModel(cellDescription, position, root));
+                    _cells.Add(new GlobalMapCellModel(cellDescription, position, root, _currentPreset));
                 }
             }
         }

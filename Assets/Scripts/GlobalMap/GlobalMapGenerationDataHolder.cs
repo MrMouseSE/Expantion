@@ -1,5 +1,5 @@
 using GlobalMap.Cells;
-using GlobalMap.Locations;
+using GlobalMap.Presets;
 using UnityEngine;
 
 namespace GlobalMap
@@ -7,10 +7,9 @@ namespace GlobalMap
     [CreateAssetMenu(menuName = "Create GlobalMapGenerationDataHolder", fileName = "GlobalMapGenerationDataHolder", order = 0)]
     public class GlobalMapGenerationDataHolder : ScriptableObject
     {
-        public GlobalMapCellDescription TerrainCell;
+        public GlobalMapCellDescription GlobalMapCell;
         [Space]
-        public GlobalMapLocationsPresetDescription StartLocations;
-        public GlobalMapLocationDescription PlayerHome;
+        public GlobalMapPresetDescription GlobalMapPresetData;
         [Space]
         public int LocationsCount;
         [Space]
@@ -21,10 +20,9 @@ namespace GlobalMap
             var data = new GlobalMapSceneData
             {
                 RadiusFactor = RadiusFactor,
-                TerrainCell = TerrainCell,
-                StartLocations = StartLocations,
-                LocationsCount = LocationsCount,
-                PlayerHome = PlayerHome
+                GlobalMapCell = GlobalMapCell,
+                GlobalMapPresetData = GlobalMapPresetData,
+                LocationsCount = LocationsCount
             };
             return data;
         }

@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cellController: {fileID: -3705370127770730275, guid: 4009ff6e69e6a5e44a03019bf55063ae, type: 3}
   _width: 2.95
+  _groundVariants:
+  - {fileID: 11400000, guid: c97664b39fa18d7438031cdc70d940b2, type: 2}
