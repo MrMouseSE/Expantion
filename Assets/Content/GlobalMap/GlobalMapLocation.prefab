@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3354004992811103514}
   - component: {fileID: 5922152502572457825}
   m_Layer: 0
-  m_Name: ElvenLodge
+  m_Name: GlobalMapLocation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd776761207549108c5bab120ec7c406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 1640439109712206608}
+  _renderer: {fileID: 1640439109712206608}
 --- !u!1 &5722118658676057122
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 7035112694714903760}
   - component: {fileID: 1640439109712206608}
   m_Layer: 0
-  m_Name: mesh
+  m_Name: renderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,7 +119,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 150
-  m_Sprite: {fileID: 21300000, guid: f59c2b7686331854fa8a691b9bf85837, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -127,6 +127,6 @@ SpriteRenderer:
   m_Size: {x: 2.56, y: 3.84}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

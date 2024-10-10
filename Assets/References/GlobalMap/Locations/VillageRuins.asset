@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: VillageRuins
   m_EditorClassIdentifier: 
   _locationType: 1
-  _container: {fileID: 5922152502572457825, guid: 0b3814fb4e87af0408058adf53f4a448, type: 3}
+  _container: {fileID: 5922152502572457825, guid: db7dc1556cd9101408345182060c14eb, type: 3}
+  _spriteVariants:
+  - {fileID: 21300000, guid: 4c600412e9726094ea52b13cd56f5a7f, type: 3}
+  - {fileID: 21300000, guid: 671f88dcfe46d6d4e9e4a80cfaf27ffc, type: 3}
+  - {fileID: 21300000, guid: 710ef35adb8f15f4887ccf869d91a0ac, type: 3}
+  - {fileID: 21300000, guid: 895e6e2312f7a3046a15b70dab0a836b, type: 3}

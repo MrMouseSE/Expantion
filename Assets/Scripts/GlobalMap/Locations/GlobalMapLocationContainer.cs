@@ -5,11 +5,12 @@ namespace GlobalMap.Locations
 {
     public class GlobalMapLocationContainer : MonoBehaviour
     {
-        [SerializeField] private SpriteRenderer _sprite;
+        [SerializeField] private SpriteRenderer _renderer;
         
-        public void SetSpriteLayerOrder(GlobalMapCellModel cellModel)
+        public void SetSpriteLayerOrder(GlobalMapCellModel cellModel, Sprite sprite)
         {
-            _sprite.sortingOrder = (int)(100 - cellModel.View.GetContainer().transform.position.y);
+            _renderer.sprite = sprite;
+            _renderer.sortingOrder = (int)(100 - cellModel.View.GetContainer().transform.position.y);
         }
     }
 }

@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: Passage
   m_EditorClassIdentifier: 
   _locationType: 1
-  _container: {fileID: 5922152502572457825, guid: b412a9b974ed6af4cbe1418308558a0d, type: 3}
+  _container: {fileID: 5922152502572457825, guid: db7dc1556cd9101408345182060c14eb, type: 3}
+  _spriteVariants:
+  - {fileID: 21300000, guid: a90ccf358187ee445887bdb6ccd8dd9f, type: 3}
+  - {fileID: 21300000, guid: 3e4d61da4f559f94ea0c3b59bb64c02d, type: 3}
+  - {fileID: 21300000, guid: 5ac7531aa9c33ee4a8427519f06da898, type: 3}
+  - {fileID: 21300000, guid: 801335ed15c74fd4d8e915fb7e986d02, type: 3}

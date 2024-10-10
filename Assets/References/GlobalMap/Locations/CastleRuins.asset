@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: CastleRuins
   m_EditorClassIdentifier: 
   _locationType: 1
-  _container: {fileID: 5922152502572457825, guid: cc205875fbc1d35488a50e2b1ff2d61c, type: 3}
+  _container: {fileID: 5922152502572457825, guid: db7dc1556cd9101408345182060c14eb, type: 3}
+  _spriteVariants:
+  - {fileID: 21300000, guid: 192885a8f15d88147a390ba44b14b5be, type: 3}
+  - {fileID: 21300000, guid: bea955f7840070e49b6c01aacc301fe5, type: 3}
