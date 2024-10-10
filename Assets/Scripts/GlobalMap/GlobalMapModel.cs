@@ -39,7 +39,7 @@ namespace GlobalMap
             
             var cellDescription = _data.GlobalMapCell;
 
-            var homeCell = new GlobalMapCellModel(_data.GlobalMapCell, Vector3.zero, root, _currentPreset);
+            var homeCell = new GlobalMapCellModel(cellDescription, Vector3.zero, root, _currentPreset);
             _cells.Add(homeCell);
             CreateNewTargetLocationAtTargetCell(_currentPreset.LocationsPreset.HomeLocation, homeCell);
 
