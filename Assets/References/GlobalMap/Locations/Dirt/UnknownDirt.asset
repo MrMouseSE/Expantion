@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607560f512f948f3bf6fa9c40e2b3056, type: 3}
+  m_Name: UnknownDirt
+  m_EditorClassIdentifier: 
+  _locationType: 1
+  _spriteVariants:
+  - {fileID: 21300000, guid: 6db83cd25a50b1d4b8e02dfcfdb6ce84, type: 3}
+  - {fileID: 21300000, guid: 11a8a404488872744a83bf1e184effc2, type: 3}
+  - {fileID: 21300000, guid: 9e1ffbe8d0b615b47914cc2ca447e8c4, type: 3}

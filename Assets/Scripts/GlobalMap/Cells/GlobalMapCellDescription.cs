@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace GlobalMap.Cells
@@ -8,8 +9,11 @@ namespace GlobalMap.Cells
         [SerializeField] private GlobalMapCellController _cellController;
         [Space]
         [SerializeField] private float _width = 1.28f;
+        [Space]
+        [SerializeField] private List<GlobalMapCellGroundPresetDescription> _groundVariants;
         
         public GlobalMapCellController GlobalMapCellController => _cellController;
         public float Width => _width;
+        public List<GlobalMapCellGroundPresetDescription> GroundVariants => _groundVariants;
     }
 }

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607560f512f948f3bf6fa9c40e2b3056, type: 3}
+  m_Name: MountainMine
+  m_EditorClassIdentifier: 
+  _locationType: 1
+  _spriteVariants:
+  - {fileID: 21300000, guid: aeeacd8562777924e91dbe02e6f80971, type: 3}
+  - {fileID: 21300000, guid: 1aef1b1ad62bcab42a52fb679e78448c, type: 3}
+  - {fileID: 21300000, guid: 2d89d969d62ab5e4880a54e0a6af9512, type: 3}
+  - {fileID: 21300000, guid: 2d89d969d62ab5e4880a54e0a6af9512, type: 3}
+  - {fileID: 21300000, guid: 09b18ababd951df44a5976f415b81bd8, type: 3}
+  - {fileID: 21300000, guid: 5d230bfd5d788af48b1aac494f9ab7e6, type: 3}
