@@ -15,7 +15,7 @@ MonoBehaviour:
   GlobalMapPresets:
   - LocationsPresetPreset: {fileID: 11400000, guid: 97f6033f4cc587844ac9da5fa61d6806, type: 2}
     _environmentsPreset: {fileID: 11400000, guid: bd0b89effc890bf459d0ba0af760e3e5, type: 2}
-  - LocationsPresetPreset: {fileID: 11400000, guid: e9296598b7ca9f743a53a26dde69261d, type: 2}
-    _environmentsPreset: {fileID: 11400000, guid: b7a68fbe87b68ac4a9fa17c83f9b044c, type: 2}
   - LocationsPresetPreset: {fileID: 11400000, guid: 4ec204360c9d8a04a83c44d55d4976b4, type: 2}
     _environmentsPreset: {fileID: 11400000, guid: c97664b39fa18d7438031cdc70d940b2, type: 2}
+  - LocationsPresetPreset: {fileID: 11400000, guid: e9296598b7ca9f743a53a26dde69261d, type: 2}
+    _environmentsPreset: {fileID: 11400000, guid: b7a68fbe87b68ac4a9fa17c83f9b044c, type: 2}

@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _homeLocation: {fileID: 11400000, guid: 2f6e9abf27656e242af6893df09786ac, type: 2}
   _locations:
-  - {fileID: 11400000, guid: 1650e9a57ab27ff45b52e7110716fc10, type: 2}
   - {fileID: 11400000, guid: 7a94b1837b47d8a4ebb317222cdfd3dd, type: 2}
   - {fileID: 11400000, guid: b79248ac930b762439e121c773947b67, type: 2}
   - {fileID: 11400000, guid: 5903a6ad4f47bb8449f09d389716c364, type: 2}

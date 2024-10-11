@@ -22,7 +22,7 @@ namespace GlobalMap.Cells.Models
             globalMapCellController.transform.SetParent(root);
             globalMapCellController.Activate(_model);
             
-            _defaultSprite = _presetData.EnvironmentsPreset.SpriteVariants[Random.Range(0, _presetData.EnvironmentsPreset.SpriteVariants.Count)];
+            _defaultSprite = _presetData.EnvironmentsPreset.GetSpriteByWeight();
             
             _container = globalMapCellController.CellContainer;
             _container.SetSprite(_defaultSprite);
