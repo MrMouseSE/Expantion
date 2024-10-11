@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: MountainGroundPreset
   m_EditorClassIdentifier: 
   _groundPresets:
-  - _sprite: {fileID: 21300000, guid: 0849736e6ce522842a456461aa8a33ed, type: 3}
-    _weight: 0.4
   - _sprite: {fileID: 21300000, guid: 1fca9841a2cf4404aafdc94af0c89c11, type: 3}
-    _weight: 0.25
+    _weight: 0.2
   - _sprite: {fileID: 21300000, guid: b1cbc8ddb3ffdc740af21772f856db40, type: 3}
     _weight: 0.1
   - _sprite: {fileID: 21300000, guid: de573283865d96349913a348e85d4c0a, type: 3}
-    _weight: 0.3
+    _weight: 0.4
+  - _sprite: {fileID: 21300000, guid: 9e1fed20054b8064aba1fa6052c3b853, type: 3}
+    _weight: 0.1
