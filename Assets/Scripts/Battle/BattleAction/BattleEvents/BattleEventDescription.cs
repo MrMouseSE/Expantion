@@ -18,6 +18,7 @@ namespace Battle.BattleAction.BattleEvents
     [Serializable]
     public class EventValuesHolder
     {
+        public Sprite EventSprite;
         public string EventDescription;
         public Vector2Int ValueRange;
     }

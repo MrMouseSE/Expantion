@@ -10,19 +10,10 @@ namespace Battle.BattleAction.BattleEvents
             Description = description;
         }
 
-        public void GenerateNewFightEvent()
+        public BattleEvent GenerateNewFightEvent()
         {
             CurrentBattleEvent = BattleEventFactory.GenerateFightEvent(Description);
-        }
-
-        public BattleEvent GetFightEvent()
-        {
             return CurrentBattleEvent;
-        }
-
-        public void ClearFightEvent()
-        {
-            CurrentBattleEvent = null;
         }
     }
 }

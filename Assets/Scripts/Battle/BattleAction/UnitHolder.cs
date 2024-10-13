@@ -8,7 +8,7 @@ namespace Battle.BattleAction
     public class UnitHolder
     {
         public UnitClass CurrentUnit;
-        public List<BattleEvent> FightEvents = new List<BattleEvent>();
+        public List<BattleEvent> CurrentEvents = new List<BattleEvent>();
         public BattleEventsController EventsController;
         
         public UnitHolder(UnitClass currentUnit, BattleEventDescription description)
@@ -17,22 +17,23 @@ namespace Battle.BattleAction
             EventsController = new BattleEventsController(description);
         }
 
-        public void GenerateNewFightEvent()
+        public BattleEvent GenerateNewFightEvent()
         {
-            EventsController.GenerateNewFightEvent();
+            var newEvent = EventsController.GenerateNewFightEvent();
+            CurrentEvents.Add(newEvent);
+            return newEvent;
         }
 
-        public void SelectCurrentFightEvent()
+        public void ClearEvents()
         {
-            FightEvents.Add(EventsController.GetFightEvent());
-            EventsController.ClearFightEvent();
+            CurrentEvents.Clear();
         }
 
         private int CalculateUnitValue()
         {
             float result = 0;
             result += CurrentUnit.Description.UnitCurrentValue;
-            foreach (var fightEvent in FightEvents)
+            foreach (var fightEvent in CurrentEvents)
             {
                 result += fightEvent.Value;
             }

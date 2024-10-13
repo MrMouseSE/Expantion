@@ -1,4 +1,5 @@
 using Battle.BattleAction;
+using UnityEngine.Serialization;
 
 namespace Battle.BattleSceneScripts
 {
@@ -6,6 +7,6 @@ namespace Battle.BattleSceneScripts
     {
         public BattleHeroButtonsHandler Handler;
 
-        public BattleLoopHandler LoopHandler;
+        [FormerlySerializedAs("LoopHandler")] public BattleLoopViewHandler loopViewHandler;
     }
 }

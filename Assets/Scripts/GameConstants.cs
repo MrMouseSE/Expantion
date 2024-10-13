@@ -5,4 +5,7 @@ public static class GameConstants
     public static int BattleHeroCountToChoise = 3;
 
     public static int BattleLoopCount = 3;
+    public static int BattleEventOneTimeGenerateCount = 1;
+    public static float BattleEventOffset = 50f;
+    public static float EnemyBattleLimitValue = 40;
 }
