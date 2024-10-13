@@ -6,7 +6,6 @@ namespace Battle.BattleSceneScripts
     public class BattleSceneUiController : AbstractUiController
     {
         public BattleHeroButtonsHandler Handler;
-
-        [FormerlySerializedAs("LoopHandler")] public BattleLoopViewHandler loopViewHandler;
+        public BattleLoopViewHandler LoopViewHandler;
     }
 }

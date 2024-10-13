@@ -8,11 +8,10 @@ namespace Battle.BattleAction
         public UnitHolder Enemy;
         public UnitHolder Player;
 
-        public void FillUnitsHolders(UnitClass playerUnit, BattleEventDescription playerEvents,
-            UnitClass enemyUnit, BattleEventDescription enemyEvents)
+        public void FillUnitsHolders(UnitClass playerUnit, UnitClass enemyUnit)
         {
-            Player = new UnitHolder(playerUnit,playerEvents);
-            Enemy = new UnitHolder(enemyUnit,enemyEvents);
+            Player = new UnitHolder(playerUnit);
+            Enemy = new UnitHolder(enemyUnit);
         }
     }
 }

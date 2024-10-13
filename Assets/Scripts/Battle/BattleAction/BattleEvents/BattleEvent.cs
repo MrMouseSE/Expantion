@@ -5,7 +5,7 @@ namespace Battle.BattleAction.BattleEvents
     public class BattleEvent
     {
         public int Value;
-        public Sprite EventImage;
+        public Sprite EventSprite;
         public string EventDescription;
     }
 }

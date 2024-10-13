@@ -12,6 +12,7 @@ namespace Battle.BattleAction
         public void Init(BattleLoopViewHandler battleLoopViewHandler, BattleHolder battleHolder)
         {
             _currentLoopViewHandler = battleLoopViewHandler;
+            _currentLoopViewHandler.Init();
             _currentLoopViewHandler.StartFightAction += StartEnemyEventGathering;
             _currentLoopViewHandler.AddEventAction += AddEvent;
             _currentbattleHolder = battleHolder;

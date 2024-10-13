@@ -11,10 +11,10 @@ namespace Battle.BattleAction
         public List<BattleEvent> CurrentEvents = new List<BattleEvent>();
         public BattleEventsController EventsController;
         
-        public UnitHolder(UnitClass currentUnit, BattleEventDescription description)
+        public UnitHolder(UnitClass currentUnit)
         {
             CurrentUnit = currentUnit;
-            EventsController = new BattleEventsController(description);
+            EventsController = new BattleEventsController(currentUnit.EventDescription);
         }
 
         public BattleEvent GenerateNewFightEvent()

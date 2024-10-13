@@ -10,10 +10,9 @@ namespace Battle.BattleSceneScripts
         private BattleHeroButtonsHandler _battleHeroButtonsHandler;
         private BattleHolder _battleHolder;
 
-        private BattleLoopHandler _battleLoopHandler;
-
-        private BattleEventDescription _playerEvents;
-        private BattleEventDescription _enemyEvents;
+        private BattleLoopViewHandler _battleLoopViewHandler;
+        private BattleLoopController _battleLoop;
+        
         private UnitClass _enemyUnit;
         private int _fightLoopCount;
 
@@ -24,12 +23,12 @@ namespace Battle.BattleSceneScripts
             _battleHeroButtonsHandler.StartFightButtonPressed += StartFight;
             GenerateEnemyUnit(scenesData.CurrentEnemyLevel);
 
-            _battleLoopHandler = uiController.LoopHandler;
+            _battleLoopViewHandler = uiController.LoopViewHandler;
+            _battleLoopViewHandler.MyGameObject.SetActive(false);
         }
 
         public void Init(ScenesDataHolder scenesData)
         {
-            throw new System.NotImplementedException();
             _fightLoopCount = GameConstants.BattleLoopCount;
         }
 
@@ -42,15 +41,20 @@ namespace Battle.BattleSceneScripts
 
         private void StartFight(UnitClass playerUnit)
         {
+            _battleHeroButtonsHandler.MyGameObject.SetActive(false);
+            _battleLoopViewHandler.MyGameObject.SetActive(true);
             _battleHolder = new BattleHolder();
-            _battleHolder.FillUnitsHolders(playerUnit, _playerEvents, _enemyUnit, _enemyEvents);
-            BattleLoopController battleLoop = new BattleLoopController();
-            battleLoop.Init(_battleLoopHandler, _battleHolder);
-            battleLoop.FightCompleeteAction += ApplyFightResults;
+            _battleHolder.FillUnitsHolders(playerUnit, _enemyUnit);
+            _battleLoop = new BattleLoopController();
+            _battleLoop.Init(_battleLoopViewHandler, _battleHolder);
+            _battleLoop.FightCompleeteAction += ApplyFightResults;
         }
 
         private void ApplyFightResults(bool isPlayerWin, float damage)
         {
+            _battleLoop.FightCompleeteAction -= ApplyFightResults;
+            _battleLoop = null;
+            
             var damagedUnit = isPlayerWin ? _battleHolder.Enemy.CurrentUnit : _battleHolder.Player.CurrentUnit;
             damagedUnit.Description.UnitCurrentHP -= damage;
             _fightLoopCount -= 1;

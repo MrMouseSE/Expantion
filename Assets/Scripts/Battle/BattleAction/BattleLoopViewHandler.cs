@@ -7,6 +7,7 @@ namespace Battle.BattleAction
 {
     public class BattleLoopViewHandler : MonoBehaviour
     {
+        public GameObject MyGameObject;
         public Action StartFightAction;
         public Button StartFightButton;
 

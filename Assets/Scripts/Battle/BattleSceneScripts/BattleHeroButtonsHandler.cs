@@ -10,6 +10,7 @@ namespace Battle.BattleSceneScripts
 {
     public class BattleHeroButtonsHandler : MonoBehaviour
     {
+        public GameObject MyGameObject;
         public Action<UnitClass> StartFightButtonPressed;
         
         public RectTransform MyRectTransform;

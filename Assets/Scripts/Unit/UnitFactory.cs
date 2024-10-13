@@ -21,13 +21,16 @@ namespace Unit
             var enemyes = Map.Enemies.FindAll(x => x.UnitLevel == enemyLevel);
             var enemy = new UnitClass(0);
             enemy.Description = new UnitDescription();
-            enemy.Description = SetupUnitValues(enemy.Description, enemyes[Random.Range(0, enemyes.Count)]);
+            var currentEnemyBlueprint = enemyes[Random.Range(0, enemyes.Count)];
+            enemy.Description = SetupUnitValues(enemy.Description, currentEnemyBlueprint);
+            enemy.EventDescription = currentEnemyBlueprint.UnitEvents;
             return enemy;
         }
 
         private static UnitDescription GenerateUnitDescription(UnitClass unit)
         {
             var bps = FindTypeFromMap(unit.UnitType, unit.UnitLevel);
+            unit.EventDescription = bps[^1].UnitEvents;
             return SetupUnitValues(bps);
         }
 

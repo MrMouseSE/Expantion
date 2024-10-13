@@ -18,12 +18,24 @@ namespace Battle.BattleAction.BattleEvents
         {
             EventGameObject = new GameObject("EventHolder");
             EventRectTransform = EventGameObject.AddComponent<RectTransform>();
-            EventRectTransform.parent = root;
+            EventRectTransform.SetParent(root);
+            EventRectTransform.localScale = Vector3.one;
             EventRectTransform.localPosition = Vector3.zero;
             EventRectTransform.localPosition += Vector3.right * offset;
             EventImage = EventGameObject.AddComponent<Image>();
-            EventText = EventGameObject.AddComponent<TextMeshPro>();
-            EventImage.sprite = newEvent.EventImage;
+            GameObject textGO = new GameObject
+            {
+                name = "textGO",
+            };
+            var textRect =textGO.AddComponent<RectTransform>();
+            textRect.SetParent(EventRectTransform);
+            textRect.localScale = Vector3.one;
+            textRect.localPosition = Vector3.zero;
+            textRect.localPosition += Vector3.right * offset;
+            
+            EventText = textGO.AddComponent<TextMeshProUGUI>();
+            EventText.fontSize = 10f;
+            EventImage.sprite = newEvent.EventSprite;
             EventText.text = newEvent.EventDescription;
             EventValue = newEvent.Value;
         }

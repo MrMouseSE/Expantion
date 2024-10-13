@@ -10,6 +10,7 @@ namespace Battle.BattleAction.BattleEvents
             var holder = description.GetRandomEvent(100f);
             battleEvent.EventDescription = holder.EventDescription;
             battleEvent.Value = Random.Range(holder.ValueRange.x,holder.ValueRange.y);
+            battleEvent.EventSprite = holder.EventSprite;
             return battleEvent;
         }
     }

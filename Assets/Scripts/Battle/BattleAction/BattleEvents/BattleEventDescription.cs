@@ -4,7 +4,7 @@ using Random = UnityEngine.Random;
 
 namespace Battle.BattleAction.BattleEvents
 {
-    [CreateAssetMenu(menuName = "Create FightEventDescription", fileName = "FightEventDescription", order = 0)]
+    [CreateAssetMenu(menuName = "Create BattleEventDescription", fileName = "BattleEventDescription", order = 0)]
     public class BattleEventDescription : ScriptableObject
     {
         public EventValuesHolder[] Events;

@@ -19,3 +19,4 @@ MonoBehaviour:
   UnitAddHP: 1
   UnitAddValue: 1
   UnitAddValueCorrection: 1
+  UnitEvents: {fileID: 11400000, guid: c6ccd0898018e4c489a83010ead65e35, type: 2}

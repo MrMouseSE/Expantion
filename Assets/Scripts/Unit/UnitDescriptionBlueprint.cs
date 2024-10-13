@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Battle.BattleAction.BattleEvents;
 using UnityEngine;
 
 namespace Unit
@@ -12,5 +14,6 @@ namespace Unit
         public float UnitAddHP;
         public float UnitAddValue;
         public float UnitAddValueCorrection;
+        public BattleEventDescription UnitEvents;
     }
 }
