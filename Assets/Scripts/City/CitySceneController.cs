@@ -9,7 +9,7 @@ namespace City
             throw new System.NotImplementedException();
         }
 
-        public void Init(ISceneControllerData data)
+        public void Init(ScenesDataHolder sceneData)
         {
             throw new System.NotImplementedException();
         }

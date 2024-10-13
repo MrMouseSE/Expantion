@@ -13,7 +13,5 @@ namespace GlobalMap
         
         public int LocationsCount;
         public int RadiusFactor;
-        
-        public ISceneControllerData GetSceneData() => this;
     }
 }

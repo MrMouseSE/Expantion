@@ -48,7 +48,8 @@ public class GameController : MonoBehaviour
         GlobalMapSceneData globalMapSceneData = GenerationDataHolder.GetGenerationData();
         globalMapSceneData.SceneRoot = 
             _scenesHandler.GetSceneContainerByType(SceneType.GlobalMap).RootObject.transform;
-        SceneControllers[2].Init(globalMapSceneData);
+        CurrentScenesDataHolder.CurrentSceneControllerData = globalMapSceneData;
+        SceneControllers[2].Init(CurrentScenesDataHolder);
     }
 
     private void CreateSceneControllers()

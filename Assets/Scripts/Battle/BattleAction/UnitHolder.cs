@@ -28,7 +28,7 @@ namespace Battle.BattleAction
             EventsController.ClearFightEvent();
         }
 
-        public int CalculateUnitValue()
+        private int CalculateUnitValue()
         {
             float result = 0;
             result += CurrentUnit.Description.UnitCurrentValue;
@@ -39,8 +39,9 @@ namespace Battle.BattleAction
             return Mathf.RoundToInt(result);
         }
 
-        public int CalculateLerpValue(int value)
+        public int CalculateLerpValue()
         {
+            var value = CalculateUnitValue();
             var floatValue = Mathf.Lerp(value, GameConstants.PerfectValue, CurrentUnit.Description.UnitCurrentValueCorrection);
             return Mathf.RoundToInt(floatValue);
         }

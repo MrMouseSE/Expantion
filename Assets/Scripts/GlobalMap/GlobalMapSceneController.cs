@@ -11,9 +11,10 @@ namespace GlobalMap
             throw new System.NotImplementedException();
         }
 
-        public void Init(ISceneControllerData data)
+        public void Init(ScenesDataHolder sceneData)
         {
-            _globalMapModelView = new GlobalMapModel(data.GetSceneData() as GlobalMapSceneData);
+            GlobalMapSceneData data = sceneData.CurrentSceneControllerData as GlobalMapSceneData;
+            _globalMapModelView = new GlobalMapModel(data);
         }
     }
 }

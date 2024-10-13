@@ -7,43 +7,63 @@ namespace Battle.BattleSceneScripts
 {
     public class BattleSceneController : ISceneController
     {
-        public BattleHeroButtonsHandler BattleHeroButtonsHandler;
-        public BattleHolder BattleHolder;
+        private BattleHeroButtonsHandler _battleHeroButtonsHandler;
+        private BattleHolder _battleHolder;
+
+        private BattleLoopHandler _battleLoopHandler;
 
         private BattleEventDescription _playerEvents;
         private BattleEventDescription _enemyEvents;
         private UnitClass _enemyUnit;
+        private int _fightLoopCount;
 
         public void UpdateSceneData(ScenesDataHolder scenesData)
         {
             var uiController = scenesData.CurrentSceneUi as BattleSceneUiController;
-            BattleHeroButtonsHandler = uiController.Handler;
-            BattleHeroButtonsHandler.StartFightButtonPressed += StartFight;
+            _battleHeroButtonsHandler = uiController.Handler;
+            _battleHeroButtonsHandler.StartFightButtonPressed += StartFight;
             GenerateEnemyUnit(scenesData.CurrentEnemyLevel);
+
+            _battleLoopHandler = uiController.LoopHandler;
         }
 
-        public void Init(ISceneControllerData data)
+        public void Init(ScenesDataHolder scenesData)
         {
             throw new System.NotImplementedException();
+            _fightLoopCount = GameConstants.BattleLoopCount;
         }
 
         private void GenerateEnemyUnit(int level)
         {
             _enemyUnit = UnitFactory.GenerateEnemy(level);
-            BattleHeroButtonsHandler.EnemyTitle.text = _enemyUnit.Description.UnitName;
-            BattleHeroButtonsHandler.EnemyPortrait.sprite = _enemyUnit.Description.UnitSprite;
-
+            _battleHeroButtonsHandler.EnemyTitle.text = _enemyUnit.Description.UnitName;
+            _battleHeroButtonsHandler.EnemyPortrait.sprite = _enemyUnit.Description.UnitSprite;
         }
 
         private void StartFight(UnitClass playerUnit)
         {
-            BattleHolder = new BattleHolder();
-            BattleHolder.FillUnitsHolders(playerUnit, _playerEvents, _enemyUnit, _enemyEvents);
+            _battleHolder = new BattleHolder();
+            _battleHolder.FillUnitsHolders(playerUnit, _playerEvents, _enemyUnit, _enemyEvents);
+            BattleLoopController battleLoop = new BattleLoopController();
+            battleLoop.Init(_battleLoopHandler, _battleHolder);
+            battleLoop.FightCompleeteAction += ApplyFightResults;
+        }
+
+        private void ApplyFightResults(bool isPlayerWin, float damage)
+        {
+            var damagedUnit = isPlayerWin ? _battleHolder.Enemy.CurrentUnit : _battleHolder.Player.CurrentUnit;
+            damagedUnit.Description.UnitCurrentHP -= damage;
+            _fightLoopCount -= 1;
+            if (_fightLoopCount == 0)
+            {
+                
+                GameController.SwitchScene(SceneType.GlobalMap);
+            }
         }
 
         private void Destroy()
         {
-            BattleHeroButtonsHandler.StartFightButtonPressed -= StartFight;
+            _battleHeroButtonsHandler.StartFightButtonPressed -= StartFight;
         }
     }
 }

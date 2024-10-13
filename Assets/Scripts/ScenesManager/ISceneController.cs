@@ -4,6 +4,6 @@ namespace ScenesManager
     {
         public void UpdateSceneData(ScenesDataHolder sceneData);
 
-        public void Init(ISceneControllerData data);
+        public void Init(ScenesDataHolder sceneData);
     }
 }
