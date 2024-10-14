@@ -14,7 +14,7 @@ namespace GlobalMap.Locations
 
         public GlobalMapLocationDescription GetDescription() => _description;
         
-        public void CreateView(GlobalMapCellModel cell)
+        public void CreateView(IGlobalMapCell cell)
         {
             cell.View.UpdateView(_description.SpriteVariants[Random.Range(0, _description.SpriteVariants.Count)]);
         }

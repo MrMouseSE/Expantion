@@ -7,13 +7,13 @@ using UnityEngine.EventSystems;
 
 namespace GlobalMap.Cells
 {
-    public class GlobalMapCellController : MonoBehaviour, IPointerClickHandler
+    public class GlobalMapCellController : CellController, IPointerClickHandler
     {
         [SerializeField] private GlobalMapCellContainer _container;
 
-        public GlobalMapCellContainer CellContainer => _container;
+        public override GlobalMapCellContainer CellContainer => _container;
         
-        private GlobalMapCellModel _model;
+        private IGlobalMapCell _model;
 
         public void OnPointerClick(PointerEventData eventData)
         {
@@ -38,9 +38,9 @@ namespace GlobalMap.Cells
             }
         }
 
-        public void Activate(GlobalMapCellModel model)
+        protected override void OnActivate(ICell model)
         {
-            _model = model;
+            _model = (IGlobalMapCell)model;
         }
     }
 }

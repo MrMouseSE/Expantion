@@ -7,10 +7,10 @@ namespace GlobalMap.Cells.Models
     {
         private Sprite _defaultSprite;
         private GlobalMapCellContainer _container;
-        private readonly GlobalMapCellModel _model;
+        private readonly IGlobalMapCell _model;
         private readonly GlobalMapPresetData _presetData;
 
-        public GlobalMapCellModelView(GlobalMapCellModel model, GlobalMapPresetData presetData)
+        public GlobalMapCellModelView(IGlobalMapCell model, GlobalMapPresetData presetData)
         {
             _model = model;
             _presetData = presetData;

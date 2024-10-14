@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace GlobalMap.Cells.Models
 {
-    public class GlobalMapCellModel
+    public class GlobalMapCellModel : IGlobalMapCell
     {
         public GlobalMapCellDescription Description { get; }
         public IGlobalMapLocation Location { get; set; }

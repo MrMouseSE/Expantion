@@ -14,7 +14,7 @@ namespace GlobalMap
 
         private static readonly float _sqrtThree = Mathf.Sqrt(3);
         
-        private readonly Collection<GlobalMapCellModel> _cells = new ();
+        private readonly Collection<IGlobalMapCell> _cells = new ();
         private readonly Collection<GlobalMapLocation> _activeLocations = new ();
         private readonly GlobalMapSceneData _data;
         private readonly GlobalMapPresetData _currentPreset;
@@ -52,20 +52,20 @@ namespace GlobalMap
                     var position = new Vector2(Mathf.Cos(recalculateAngleForStep), Mathf.Sin(recalculateAngleForStep)) * _sqrtThree * cellDescription.Width / 2 * k;
                     var divisionAngle = recalculateAngleForStep + 2 * _angle;
                     position += i % k * _sqrtThree * cellDescription.Width / 2 * new Vector2(Mathf.Cos(divisionAngle), Mathf.Sin(divisionAngle));
-                
+                    
                     _cells.Add(new GlobalMapCellModel(cellDescription, position, root, _currentPreset));
                 }
             }
         }
         
-        private bool GetEmptyCell(out GlobalMapCellModel cellModel)
+        private bool GetEmptyCell(out IGlobalMapCell cellModel)
         {
             var freeCells = _cells.Where(cell => !cell.Occupied).ToList();
 
             return GetEmptyCellOutOfFreeCells(out cellModel, freeCells);
         }
         
-        private static bool GetEmptyCellOutOfFreeCells(out GlobalMapCellModel cellModel, IReadOnlyList<GlobalMapCellModel> freeCells)
+        private static bool GetEmptyCellOutOfFreeCells(out IGlobalMapCell cellModel, IReadOnlyList<IGlobalMapCell> freeCells)
         {
             if (freeCells.Count <= 0)
             {
@@ -102,7 +102,7 @@ namespace GlobalMap
             locationModel.CreateView(targetCell);
         }
         
-        private void CreateNewTargetLocationAtTargetCell(GlobalMapLocationDescription locationDescription, GlobalMapCellModel cell)
+        private void CreateNewTargetLocationAtTargetCell(GlobalMapLocationDescription locationDescription, IGlobalMapCell cell)
         {
             if (cell.Occupied) return;
 
