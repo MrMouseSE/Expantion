@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using TMPro;
 using Unit;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,11 +17,8 @@ namespace Battle.BattleSceneScripts
         public Button RerollButton;
         public Button StartBattleButton;
 
-        public TMP_Text HeroTitle;
-        public Image HeroPortrait;
-
-        public TMP_Text EnemyTitle;
-        public Image EnemyPortrait;
+        public BattleUnitViewHolder PlayerUnitViewHolder;
+        public BattleUnitViewHolder EnemyUnitViewHolder;
         
         public List<HeroButtonMono> HeroButtons = new List<HeroButtonMono>();
         
@@ -49,9 +45,19 @@ namespace Battle.BattleSceneScripts
             if (selectedButton == _selectedButton) return;
             _selectedButton = selectedButton;
             _selectedUnit =  UnitFactory.GenerateUnit(_selectedButton.CurrentHeroType);
-            HeroTitle.text = _selectedUnit.Description.UnitName;
-            HeroPortrait.sprite = _selectedUnit.Description.UnitSprite;
+            UpdateUnitViewInfo(PlayerUnitViewHolder, _selectedUnit.Description);
             ResetSelectedButton();
+        }
+
+        public void UpdateEnemyUnitInfo(UnitDescription description)
+        {
+            UpdateUnitViewInfo(EnemyUnitViewHolder, description);
+        }
+
+        private void UpdateUnitViewInfo(BattleUnitViewHolder unitViewHolder, UnitDescription description)
+        {
+            unitViewHolder.UnitTitle.text = description.UnitName;
+            unitViewHolder.UnitScreen.sprite = description.UnitSprite;
         }
 
         public UnitTypes GetSelectedType()

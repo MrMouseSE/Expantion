@@ -1,5 +1,4 @@
 using Battle.BattleAction;
-using Battle.BattleAction.BattleEvents;
 using ScenesManager;
 using Unit;
 
@@ -35,16 +34,17 @@ namespace Battle.BattleSceneScripts
         private void GenerateEnemyUnit(int level)
         {
             _enemyUnit = UnitFactory.GenerateEnemy(level);
-            _battleHeroButtonsHandler.EnemyTitle.text = _enemyUnit.Description.UnitName;
-            _battleHeroButtonsHandler.EnemyPortrait.sprite = _enemyUnit.Description.UnitSprite;
+            _battleHeroButtonsHandler.UpdateEnemyUnitInfo(_enemyUnit.Description);
         }
 
         private void StartFight(UnitClass playerUnit)
         {
             _battleHeroButtonsHandler.MyGameObject.SetActive(false);
             _battleLoopViewHandler.MyGameObject.SetActive(true);
+            _battleLoopViewHandler.BattleResult.SetActive(false);
             _battleHolder = new BattleHolder();
             _battleHolder.FillUnitsHolders(playerUnit, _enemyUnit);
+            _battleLoopViewHandler.UpdateUnitInfo(playerUnit,_enemyUnit);
             _battleLoop = new BattleLoopController();
             _battleLoop.Init(_battleLoopViewHandler, _battleHolder);
             _battleLoop.FightCompleeteAction += ApplyFightResults;
@@ -57,6 +57,10 @@ namespace Battle.BattleSceneScripts
             
             var damagedUnit = isPlayerWin ? _battleHolder.Enemy.CurrentUnit : _battleHolder.Player.CurrentUnit;
             damagedUnit.Description.UnitCurrentHP -= damage;
+
+            _battleLoopViewHandler.BattleResult.SetActive(true);
+            _battleLoopViewHandler.ResultText.text = damagedUnit.Description.UnitName + " get " + damage + " damage";
+            
             _fightLoopCount -= 1;
             if (_fightLoopCount == 0)
             {
