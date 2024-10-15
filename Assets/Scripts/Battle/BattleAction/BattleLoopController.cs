@@ -52,6 +52,7 @@ namespace Battle.BattleAction
             UnitClass winner = isPlayerWin ? _currentbattleHolder.Player.CurrentUnit : _currentbattleHolder.Enemy.CurrentUnit;
             float damage = winner.Description.UnitCurrentDamage;
             FightCompleeteAction.Invoke(isPlayerWin,damage);
+            _currentLoopViewHandler.UpdateUnitInfo(_currentbattleHolder.Player.CurrentUnit,_currentbattleHolder.Enemy.CurrentUnit);
             ClearAllEvents();
         }
         
