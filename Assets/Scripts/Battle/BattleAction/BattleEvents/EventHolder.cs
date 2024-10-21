@@ -21,7 +21,8 @@ namespace Battle.BattleAction.BattleEvents
             EventRectTransform.SetParent(root);
             EventRectTransform.localScale = Vector3.one;
             EventRectTransform.localPosition = Vector3.zero;
-            EventRectTransform.localPosition += Vector3.right * offset;
+            EventRectTransform.localPosition += Vector3.right * offset * 70f;
+            EventRectTransform.sizeDelta = new Vector2(300, 500);
             EventImage = EventGameObject.AddComponent<Image>();
             GameObject textGO = new GameObject
             {
@@ -29,12 +30,15 @@ namespace Battle.BattleAction.BattleEvents
             };
             var textRect =textGO.AddComponent<RectTransform>();
             textRect.SetParent(EventRectTransform);
-            textRect.localScale = Vector3.one;
+            textRect.anchorMin = new Vector2(0f, 0f);
+            textRect.anchorMax = new Vector2(1f, 1f);
+            textRect.pivot = new Vector2(0.5f,0.5f);
             textRect.localPosition = Vector3.zero;
-            textRect.localPosition += Vector3.right * offset;
+            textRect.localScale = Vector3.one;
             
             EventText = textGO.AddComponent<TextMeshProUGUI>();
-            EventText.fontSize = 10f;
+            EventText.alignment = TextAlignmentOptions.MidlineFlush;
+            EventText.fontSize = 50f;
             EventImage.sprite = newEvent.EventSprite;
             EventText.text = newEvent.EventDescription;
             EventValue = newEvent.Value;
